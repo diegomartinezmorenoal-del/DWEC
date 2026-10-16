@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 9 - Contador de Frecuencia</title>
+</head>
+<body>
+  <h1>Ejercicio 9: Map como Contador de Frecuencia</h1>
+  <div id="resultado"></div>
+
+  <script>
+    const frase = ['a', 'b', 'a', 'c', 'b', 'a'];
+    const contador = new Map();
+
+    // Contar frecuencia de cada palabra
+    for (const palabra of frase) {
+      if (contador.has(palabra)) {
+        contador.set(palabra, contador.get(palabra) + 1);
+      } else {
+        contador.set(palabra, 1);
+      }
+    }
+
+    // Construir salida
+    let html = '<p><strong>Frecuencias:</strong></p><ul>';
+    for (const [palabra, cantidad] of contador.entries()) {
+      html += `<li>'${palabra}': ${cantidad}</li>`;
+    }
+    html += '</ul>';
+
+    document.getElementById('resultado').innerHTML = html;
+  </script>
+</body>
+</html>

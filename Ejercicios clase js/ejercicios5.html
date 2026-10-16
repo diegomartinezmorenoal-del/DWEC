@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <h1>Ejercicio 5: Usar método estático</h1>
+    <div id="resultado"></div>
+
+    <script>
+        class Calculadora {
+            static sumar(a, b) {
+                return a + b;
+            }
+        }
+
+        document.getElementById("resultado").textContent =
+            "La suma de 5 + 3 es: " + Calculadora.sumar(5, 3);
+    </script>
+</body>
+</html>

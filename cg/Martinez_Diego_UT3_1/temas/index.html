@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Biblioteca de mi aula</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/claro.css" title="Claro">
+  <link rel="alternate stylesheet" href="css/oscuro.css" title="Oscuro">
+  <link rel="stylesheet" href="css/impresion.css" media="print">
+  <script src="js/temas.js" defer></script>
+</head>
+<body>
+  <header class="contenedor">
+    <h1>Biblioteca de mi aula</h1>
+    <div class="controles">
+      <label for="selector-tema">Presentación:</label>
+      <select id="selector-tema">
+        <option value="claro">Claro</option>
+        <option value="oscuro">Oscuro</option>
+      </select>
+    </div>
+  </header>
+  <main class="contenedor">
+    <section class="tarjeta">
+      <h2>Recomendaciones</h2>
+      <p>Te recomendamos leer un poco cada día y elegir libros que despierten tu curiosidad.</p>
+      <a href="#horario">Consultar horario</a>
+    </section>
+    <section class="tarjeta" id="horario">
+      <h2>Horario</h2>
+      <p>La biblioteca del aula está disponible durante los recreos.</p>
+      <p><a href="https://www.educacionfpydeportes.gob.es/">Más información educativa</a></p>
+    </section>
+  </main>
+</body>
+</html>

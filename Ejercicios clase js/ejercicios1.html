@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h1>Ejercicio 1: Propiedades</h1>
+    <div id="resultado"></div>
+
+    <script>
+        class Persona {
+            constructor(nombre, edad) {
+                this.nombre = nombre;
+                this.edad = edad;
+            }
+        }
+
+        let persona1 = new Persona("Diego", 18);
+
+        document.getElementById("resultado").innerHTML =
+            "Nombre: " + persona1.nombre + "<br>" +
+            "Edad: " + persona1.edad;
+    </script>
+</body>
+</html>

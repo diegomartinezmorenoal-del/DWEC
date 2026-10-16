@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h1>Ejercicio 2: Métodos</h1>
+    <div id="resultado"></div>
+
+    <script>
+        class Persona {
+            constructor(nombre, edad) {
+                this.nombre = nombre;
+                this.edad = edad;
+            }
+
+            presentarse() {
+                return "Me llamo " + this.nombre +
+                    " y tengo " + this.edad + " años.";
+            }
+        }
+
+        let persona1 = new Persona("Diego", 18);
+
+        document.getElementById("resultado").textContent =
+            persona1.presentarse();
+    </script>
+</body>
+</html>

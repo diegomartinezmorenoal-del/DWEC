@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 4 - Clave de Objeto</title>
+</head>
+<body>
+  <h1>Ejercicio 4: Clave de Objeto</h1>
+  <div id="resultado"></div>
+
+  <script>
+    const traducciones = new Map();
+
+    // Crear el objeto que actuará como clave
+    const config = { version: 1.0 };
+
+    // Asociar el objeto como clave
+    traducciones.set(config, 'Configuración Global');
+
+    // Obtener el valor mediante la referencia del objeto
+    const resultado = traducciones.get(config);
+
+    document.getElementById('resultado').innerHTML = `
+      <p><strong>Valor asociado a la clave 'config':</strong> ${resultado}</p>
+    `;
+  </script>
+</body>
+</html>

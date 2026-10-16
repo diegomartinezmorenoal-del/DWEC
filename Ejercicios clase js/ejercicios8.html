@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    <h1>Ejercicio 8: Propiedades privadas</h1>
+    <div id="resultado"></div>
+
+    <script>
+        class Producto {
+            #precio;
+
+            constructor(nombre, precio) {
+                this.nombre = nombre;
+                this.#precio = precio;
+            }
+
+            get obtenerPrecio() {
+                return this.#precio;
+            }
+
+            set cambiarPrecio(nuevoPrecio) {
+                this.#precio = nuevoPrecio;
+            }
+        }
+
+        let producto1 = new Producto("Ratón", 15);
+
+        document.getElementById("resultado").innerHTML =
+            "Producto: " + producto1.nombre + "<br>" +
+            "Precio: " + producto1.obtenerPrecio + " €";
+    </script>
+</body>
+</html>

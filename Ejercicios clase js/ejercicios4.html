@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <h1>Ejercicio 4: Método estático</h1>
+    <div id="resultado"></div>
+
+    <script>
+        class Persona {
+            static saludar() {
+                return "¡Hola a todos!";
+            }
+        }
+
+        document.getElementById("resultado").textContent =
+            Persona.saludar();
+    </script>
+</body>
+</html>

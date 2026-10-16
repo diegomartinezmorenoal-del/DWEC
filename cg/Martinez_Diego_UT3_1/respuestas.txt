@@ -1,0 +1,56 @@
+UT3.1 - CASCADA Y TEMAS
+Nombre: Diego Martínez Moreno
+
+BLOQUE A. CASOS DE CASCADA
+
+A1. Especificidad
+Predicción: gana .aviso y el texto será rojo.
+Resultado: rojo.
+Gana .aviso porque su especificidad es (0,1,0), mientras que p tiene (0,0,1). La clase tiene más especificidad que un selector de elemento. El orden no decide porque primero se compara la especificidad.
+
+A2. Empate
+Predicción: azul.
+Resultado: azul. Ambos selectores .aviso tienen especificidad (0,1,0). Al tener la misma importancia y especificidad, gana la declaración que aparece después.
+Al invertir las reglas, gana rojo. Cambia el orden de aparición y se aplica el criterio de orden de fuente.
+
+A3. Orden de las clases en HTML
+Predicción: verde.
+Resultado: verde. .destacado y .aviso tienen la misma especificidad (0,1,0), por lo que gana la última regla: .aviso, color rojo.
+Cambiar class="aviso destacado" por class="destacado aviso" no cambia el resultado. El orden de las clases en el atributo HTML no determina la cascada; importa el orden de las reglas CSS cuando hay empate.
+
+A4. Selector que coincide o no coincide
+Con .aviso .destacado: el resultado es rojo. Ese selector busca un elemento con clase destacado dentro de otro elemento con clase aviso. El párrafo tiene las dos clases en el mismo elemento, por lo que no coincide.
+Al quitar el espacio, queda .aviso.destacado. Este selector busca un único elemento que tenga ambas clases y sí coincide. Su especificidad es (0,2,0), superior a .aviso (0,1,0), por lo que gana púrpura.
+
+A5. Estilo en línea e importancia
+Con style="color: purple" el texto se ve púrpura, porque el estilo en línea tiene prioridad frente a la regla normal .aviso.
+Al cambiar la regla a .aviso { color: red !important; }, el texto se ve rojo. !important aumenta la prioridad de la declaración en la cascada; no cambia la especificidad del selector, que sigue siendo (0,1,0).
+
+A6. Herencia y declaración directa
+Con #zona { color: red; } y p { color: blue; }, el h2 se ve rojo por herencia desde #zona y el párrafo azul porque tiene una declaración directa. El párrafo no recibe un borde propio: el borde pertenece a section#zona y no se hereda.
+Al cambiar a p { color: inherit; }, el párrafo hereda el color rojo de su elemento padre. El borde sigue perteneciendo a la sección. Esta es la versión final que queda guardada en pruebas.css.
+
+BLOQUE B. TEMAS
+
+B1. Hoja persistente, preferida y alternativa
+La hoja persistente es base.css: <link rel="stylesheet" href="css/base.css">. No tiene title y se mantiene aplicada.
+La hoja preferida es claro.css: <link rel="stylesheet" href="css/claro.css" title="Claro">. Tiene title y rel="stylesheet".
+La alternativa es oscuro.css: <link rel="alternate stylesheet" href="css/oscuro.css" title="Oscuro">. Se distingue por rel="alternate stylesheet" y title="Oscuro".
+
+B2. ¿Por qué no desaparecen el relleno y los bordes al pasar a Oscuro?
+Porque esas propiedades se encuentran en base.css, que permanece activa. Las hojas de tema cambian principalmente colores, mientras que la estructura, el espaciado y los bordes comunes siguen definidos en la hoja base.
+
+B3. ¿rel="alternate stylesheet" crea por sí solo el selector visible?
+No. Declara una hoja de estilos alternativa para el navegador, pero no crea el selector HTML visible. El selector se construye con HTML y JavaScript.
+
+B4. ¿Qué cambia al elegir un tema y qué contenido se conserva?
+Cambia la hoja de colores activa: claro.css u oscuro.css. Se conserva el mismo HTML, texto, enlaces, tarjetas, bordes y distribución definidos en base.css.
+
+B5. ¿Por qué impresion.css se enlaza después de los temas? ¿Participa en la vista normal?
+Se enlaza después para que sus reglas puedan prevalecer cuando corresponda al imprimir. No participa en la vista normal de pantalla porque el enlace tiene media="print"; se aplica al medio de impresión.
+
+B6. Explica el conflicto del paso 9 y cómo se resolvió.
+La regla temporal .tarjeta a { color: red; } tiene especificidad (0,1,1), superior a la regla a de los temas (0,0,1). Por eso el enlace dentro de una tarjeta aparece rojo y no toma el color del tema. Se resuelve eliminando la regla temporal y recargando, sin utilizar !important.
+
+B7. ¿Este proyecto guarda expresamente la preferencia entre visitas?
+No. El JavaScript aplica el tema elegido durante la visita, pero no utiliza almacenamiento para guardar la preferencia. Si el navegador restaura una selección, sería un comportamiento del navegador y no una función programada expresamente en este proyecto.

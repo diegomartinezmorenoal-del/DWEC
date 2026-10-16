@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 8 - Conversión Bidireccional</title>
+</head>
+<body>
+  <h1>Ejercicio 8: Conversión Bidireccional</h1>
+  <div id="resultado"></div>
+
+  <script>
+    const traducciones = new Map();
+    traducciones.set('hello', 'hola');
+    traducciones.set('bye', 'adiós');
+
+    // 1. Convertir Map a Array de pares usando el operador spread (...)
+    const arrayDePares = [...traducciones];
+
+    // 2. Crear un nuevo Map a partir de ese Array
+    const nuevoMap = new Map(arrayDePares);
+
+    document.getElementById('resultado').innerHTML = `
+      <p><strong>Array de Pares:</strong> ${JSON.stringify(arrayDePares)}</p>
+      <p><strong>Valor 'hello' en el Nuevo Map:</strong> ${nuevoMap.get('hello')}</p>
+    `;
+  </script>
+</body>
+</html>

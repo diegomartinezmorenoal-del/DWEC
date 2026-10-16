@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <h1>Ejercicio 6: Herencia</h1>
+    <div id="resultado"></div>
+
+    <script>
+        class Persona {
+            constructor(nombre, edad) {
+                this.nombre = nombre;
+                this.edad = edad;
+            }
+        }
+
+        class Estudiante extends Persona {
+            constructor(nombre, edad, curso) {
+                super(nombre, edad);
+                this.curso = curso;
+            }
+        }
+
+        let estudiante1 = new Estudiante("Diego", 18, "2º DAW");
+
+        document.getElementById("resultado").innerHTML =
+            "Nombre: " + estudiante1.nombre + "<br>" +
+            "Edad: " + estudiante1.edad + "<br>" +
+            "Curso: " + estudiante1.curso;
+    </script>
+</body>
+</html>

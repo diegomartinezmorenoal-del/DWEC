@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 10 - Simulación de Base de Datos</title>
+</head>
+<body>
+  <h1>Ejercicio 10: Simulación de Base de Datos</h1>
+  <div id="resultado"></div>
+
+  <script>
+    class DBManager {
+      #datos = new Map();
+
+      guardar(id, dato) {
+        this.#datos.set(id, dato);
+        return `Dato guardado correctamente para el ID ${id}`;
+      }
+
+      obtener(id) {
+        if (!this.#datos.has(id)) {
+          return null;
+        }
+        return this.#datos.get(id);
+      }
+
+      eliminar(id) {
+        if (this.#datos.has(id)) {
+          this.#datos.delete(id);
+          return `ID ${id} eliminado correctamente`;
+        }
+        return `Error: El ID ${id} no existe`;
+      }
+    }
+
+    // Pruebas
+    const db = new DBManager();
+    db.guardar(101, 'Usuario Juan');
+
+    const obtenerExistente = db.obtener(101);
+    const obtenerInexistente = db.obtener(999);
+    const eliminarInexistente = db.eliminar(999);
+
+    document.getElementById('resultado').innerHTML = `
+      <p><strong>Obtener ID 101:</strong> ${obtenerExistente}</p>
+      <p><strong>Obtener ID 999:</strong> ${obtenerInexistente}</p>
+      <p><strong>Eliminar ID 999:</strong> ${eliminarInexistente}</p>
+    `;
+  </script>
+</body>
+</html>

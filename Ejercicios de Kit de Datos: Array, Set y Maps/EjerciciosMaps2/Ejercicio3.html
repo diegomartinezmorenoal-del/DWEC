@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 3 - Clave de Número</title>
+</head>
+<body>
+  <h1>Ejercicio 3: Clave de Número</h1>
+  <div id="resultado"></div>
+
+  <script>
+    const traducciones = new Map();
+    traducciones.set('hello', 'hola');
+    traducciones.set('bye', 'adiós');
+
+    // Añadir clave numérica (1)
+    traducciones.set(1, 'Primer Nivel');
+
+    // Obtener valor pasándole el número 1
+    const valorObtenido = traducciones.get(1);
+
+    document.getElementById('resultado').innerHTML = `
+      <p><strong>Valor asociado a la clave numérica (1):</strong> ${valorObtenido}</p>
+    `;
+  </script>
+</body>
+</html>

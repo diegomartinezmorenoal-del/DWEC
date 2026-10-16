@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 1 - Creación y Establecimiento</title>
+</head>
+<body>
+  <h1>Ejercicio 1: Creación y Establecimiento</h1>
+  <div id="resultado"></div>
+
+  <script>
+    // 1. Creación del Map
+    const traducciones = new Map();
+
+    // 2. Establecimiento de los pares clave-valor
+    traducciones.set('hello', 'hola');
+    traducciones.set('bye', 'adiós');
+
+    // Mostrar el resultado en el navegador
+    document.getElementById('resultado').innerHTML = `
+      <p><strong>Map creado:</strong></p>
+      <ul>
+        <li>hello -> ${traducciones.get('hello')}</li>
+        <li>bye -> ${traducciones.get('bye')}</li>
+      </ul>
+    `;
+    console.log(traducciones);
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="calculadora">
+  <input type="text" id="pantalla" readonly value="0">
+  <div class="botones">
+    
+    <!-- Fila 1 -->
+    <button class="simbolo" onclick="limpiar()">C</button>
+    <button class="simbolo" onclick="raiz()">√</button>
+    <button class="simbolo" onclick="porcentaje()">%</button>
+    <button class="simbolo" onclick="operacion('/')">÷</button>
+    
+    <!-- Fila 2 -->
+    <button class="impar" onclick="numero('7')">7</button>
+    <button class="par" onclick="numero('8')">8</button>
+    <button class="impar" onclick="numero('9')">9</button>
+    <button class="simbolo" onclick="operacion('*')">×</button>
+    
+    <!-- Fila 3 -->
+    <button class="par" onclick="numero('4')">4</button>
+    <button class="impar" onclick="numero('5')">5</button>
+    <button class="par" onclick="numero('6')">6</button>
+    <button class="simbolo" onclick="operacion('-')">-</button>
+    
+    <!-- Fila 4 -->
+    <button class="impar" onclick="numero('1')">1</button>
+    <button class="par" onclick="numero('2')">2</button>
+    <button class="impar" onclick="numero('3')">3</button>
+    <button class="simbolo" onclick="operacion('+')">+</button>
+    
+    <!-- Fila 5 -->
+    <button class="par" onclick="numero('0')" style="grid-column: span 2;">0</button>
+    <button class="simbolo" onclick="numero('.')">.</button>
+    <button class="simbolo" onclick="calcular()">=</button>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

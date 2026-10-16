@@ -1,0 +1,10 @@
+body { color: #000000; background: #ffffff; }
+.controles { display: none; }
+.contenedor { width: 100%; max-width: none; }
+.tarjeta {
+  background: #ffffff;
+  border: 1px solid #000000;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+a { color: #000000; text-decoration: underline; }

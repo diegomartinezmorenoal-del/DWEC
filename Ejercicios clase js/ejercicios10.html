@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 10</title>
+</head>
+<body>
+    <h1>Ejercicio 10: Sobrescribir métodos</h1>
+    <div id="resultado"></div>
+
+    <script>
+        class Persona {
+            constructor(nombre) {
+                this.nombre = nombre;
+            }
+
+            presentarse() {
+                return "Soy una persona llamada " + this.nombre;
+            }
+        }
+
+        class Estudiante extends Persona {
+            presentarse() {
+                return "Soy " + this.nombre + " y estudio DAW";
+            }
+        }
+
+        let persona1 = new Persona("Antonio");
+        let estudiante1 = new Estudiante("Diego");
+
+        document.getElementById("resultado").innerHTML =
+            persona1.presentarse() + "<br>" +
+            estudiante1.presentarse();
+    </script>
+</body>
+</html>

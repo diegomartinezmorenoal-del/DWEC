@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 6 - Iteración de Pares</title>
+</head>
+<body>
+  <h1>Ejercicio 6: Iteración de Pares</h1>
+  <ul id="lista-pares"></ul>
+
+  <script>
+    const traducciones = new Map();
+    traducciones.set('hello', 'hola');
+    traducciones.set('bye', 'adiós');
+
+    const lista = document.getElementById('lista-pares');
+
+    // Recorrer pares con entries() y for...of
+    for (const [clave, valor] of traducciones.entries()) {
+      const li = document.createElement('li');
+      li.textContent = `Clave: [${clave}], Valor: [${valor}]`;
+      lista.appendChild(li);
+    }
+  </script>
+</body>
+</html>

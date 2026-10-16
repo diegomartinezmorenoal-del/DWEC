@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 2 - Obtención y Tamaño</title>
+</head>
+<body>
+  <h1>Ejercicio 2: Obtención y Tamaño</h1>
+  <div id="resultado"></div>
+
+  <script>
+    const traducciones = new Map();
+    traducciones.set('hello', 'hola');
+    traducciones.set('bye', 'adiós');
+
+    // Obtener valor con get() y tamaño con size
+    const valorHello = traducciones.get('hello');
+    const tamano = traducciones.size;
+
+    document.getElementById('resultado').innerHTML = `
+      <p><strong>Valor para 'hello':</strong> ${valorHello}</p>
+      <p><strong>Tamaño del Map:</strong> ${tamano}</p>
+    `;
+  </script>
+</body>
+</html>

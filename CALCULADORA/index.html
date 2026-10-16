@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <main class="calculadora">
+    <h1>Calculadora</h1>
+    <input id="pantalla" type="text" value="0" aria-label="Pantalla de la calculadora" readonly>
+    <div class="teclas">
+      <button data-action="clear" class="funcion">AC</button>
+      <button data-action="delete" class="funcion">DEL</button>
+      <button data-value="(" class="funcion">(</button>
+      <button data-value=")" class="funcion">)</button>
+      <button data-value="7" class="numero">7</button>
+      <button data-value="8" class="numero">8</button>
+      <button data-value="9" class="numero">9</button>
+      <button data-value="/" class="operador">÷</button>
+      <button data-value="4" class="numero">4</button>
+      <button data-value="5" class="numero">5</button>
+      <button data-value="6" class="numero">6</button>
+      <button data-value="*" class="operador">×</button>
+      <button data-value="1" class="numero">1</button>
+      <button data-value="2" class="numero">2</button>
+      <button data-value="3" class="numero">3</button>
+      <button data-value="-" class="operador">−</button>
+      <button data-value="0" class="numero">0</button>
+      <button data-value="." class="numero">.</button>
+      <button data-action="sqrt" class="funcion">√</button>
+      <button data-value="+" class="operador">+</button>
+      <button data-action="percent" class="funcion">%</button>
+      <button data-action="square" class="funcion">x²</button>
+      <button data-action="sign" class="funcion">±</button>
+      <button data-action="equals" class="igual">=</button>
+    </div>
+    <p id="mensaje" role="status"></p>
+  </main>
+  <script src="js/calculadora.js"></script>
+</body>
+</html>
