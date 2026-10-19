@@ -49,7 +49,7 @@ function crearCuentaBancaria(titular, saldoInicial) {
         },
 
         verHistorial: function () {
-            return historial;
+            return [...historial];
         }
     };
 }
