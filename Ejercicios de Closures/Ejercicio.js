@@ -1,10 +1,9 @@
 
 function crearCuentaBancaria(titular, saldoInicial) {
-    // Variables privadas: solo se pueden usar dentro de la función
     let saldo = saldoInicial;
     let historial = [];
 
-    // Función privada para registrar operaciones
+    // Función para registrar operaciones
     function registrarOperacion(tipo, monto) {
         historial.push({
             tipo: tipo,
@@ -13,7 +12,7 @@ function crearCuentaBancaria(titular, saldoInicial) {
         });
     }
 
-    // Métodos públicos
+    // Métodos 
     return {
         obtenerTitular: function () {
             return titular;
@@ -72,6 +71,5 @@ console.log(cuenta.depositar(0));
 console.log("Historial de operaciones:");
 console.log(cuenta.verHistorial());
 
-// Intentar acceder a los datos privados
-console.log(cuenta.saldo);     // undefined
-console.log(cuenta.historial); // undefined
+console.log(cuenta.saldo);     
+console.log(cuenta.historial);
