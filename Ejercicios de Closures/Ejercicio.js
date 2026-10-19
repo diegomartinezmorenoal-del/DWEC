@@ -19,7 +19,7 @@ function crearCuentaBancaria(titular, saldoInicial) {
         },
 
         verSaldo: function () {
-            return "Saldo disponible: $" + saldo;
+            return "Saldo disponible: " + saldo;
         },
 
         depositar: function (monto) {
@@ -49,27 +49,19 @@ function crearCuentaBancaria(titular, saldoInicial) {
         },
 
         verHistorial: function () {
-            return historial.map(operacion => ({ ...operacion }));
+            return historial;
         }
     };
 }
-
-// Crear una cuenta bancaria
 const cuenta = crearCuentaBancaria("Diego", 500);
 
 // Probar los métodos
 console.log(cuenta.obtenerTitular());
 console.log(cuenta.verSaldo());
-
 console.log(cuenta.depositar(100));
 console.log(cuenta.retirar(50));
-
 console.log(cuenta.retirar(1000));
 console.log(cuenta.depositar(0));
-
-// Mostrar el historial
 console.log("Historial de operaciones:");
 console.log(cuenta.verHistorial());
 
-console.log(cuenta.saldo);     
-console.log(cuenta.historial);
