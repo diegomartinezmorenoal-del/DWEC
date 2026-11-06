@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+
+    <h1>Contador</h1>
+
+    <p id="contador">0</p>
+
+    <button id="detener">Detener contador</button>
+
+    <script>
+        // Creamos una variable  para el contador
+        let numero = 0;
+
+        // Creamos el temporizador 
+        let temporizador = window.setInterval(function() {
+            numero++;
+            document.getElementById("contador").textContent = numero;
+        }, 1000);
+
+        // Función para detener el contador
+        document.getElementById("detener").addEventListener("click", function() {
+            window.clearInterval(temporizador);
+        });
+
+        //  5 segundos para pedir un mensaje
+        window.setTimeout(function() {
+            let mensaje = window.prompt("Escribe un mensaje:");
+
+            if (mensaje !== null) {
+                window.alert("Tu mensaje es: " + mensaje);
+            }
+        }, 5000);
+
+    </script>
+
+</body>
+</html>

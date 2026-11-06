@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3 - Navigator</title>
+</head>
+<body>
+
+    <h1>Lanzador de App</h1>
+
+    <script>
+
+        // Obtenemos la plataforma del usuario
+        let plataforma = navigator.platform;
+
+        // Comprobamos si utiliza Mac
+        if (plataforma.toLowerCase().includes("mac")) {
+
+            window.alert("Tu plataforma es compatible con nuestra aplicación.");
+
+            // Abrimos la página de Apple
+            window.open("https://www.apple.com");
+
+        } else {
+
+            window.alert("Tu plataforma no es la recomendada.");
+
+            // Preguntamos si quiere ir a Windows
+            let respuesta = window.confirm("¿Deseas ir a la página de Windows?");
+
+            if (respuesta) {
+
+                // Redirigimos a Microsoft
+                window.location.assign("https://www.microsoft.com/es-es/windows");
+
+            } else {
+
+                // Mostramos un mensaje de agradecimiento
+                document.write("Gracias por visitar nuestra página.");
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

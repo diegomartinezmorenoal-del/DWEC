@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2 </title>
+</head>
+<body>
+
+    <h1>Ficha del producto</h1>
+
+    <script>
+
+        // Obtenemos los parámetros de la URL
+        let parametros = new URLSearchParams(window.location.search);
+
+        // Obtenemos el ID y el color
+        let id = parametros.get("id");
+        let color = parametros.get("color");
+
+        // Mostramos los resultados
+        document.write("Ficha del Producto: " + id + "<br>");
+        document.write("Color Seleccionado: " + color + "<br>");
+
+    </script>
+
+    <br>
+
+    <button onclick="cambiarColor()">Cambiar color a verde</button>
+
+    <script>
+
+        function cambiarColor() {
+            window.location.href = "ejercicio2.html?id=" + id + "&color=verde";
+        }
+
+    </script>
+
+</body>
+</html>
