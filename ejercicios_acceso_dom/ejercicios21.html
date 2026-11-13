@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 21</title>
+</head>
+<body>
+
+    <h1>Lista de usuarios</h1>
+
+    <div id="contenedor-tabla"></div>
+
+    <script>
+        const usuarios = [
+            { id: 1, nombre: "Juan", email: "juan@gmail.com", rol: "Admin" },
+            { id: 2, nombre: "Ana", email: "ana@gmail.com", rol: "Usuario" },
+            { id: 3, nombre: "Pedro", email: "pedro@gmail.com", rol: "Editor" }
+        ];
+
+        const contenedor = document.getElementById("contenedor-tabla");
+
+        const tabla = document.createElement("table");
+        const thead = document.createElement("thead");
+        const tbody = document.createElement("tbody");
+
+        const cabecera = document.createElement("tr");
+
+        ["ID", "Nombre", "Email", "Rol"].forEach(function(texto) {
+            const th = document.createElement("th");
+            th.textContent = texto;
+            cabecera.appendChild(th);
+        });
+
+        thead.appendChild(cabecera);
+
+        usuarios.forEach(function(usuario) {
+            const fila = document.createElement("tr");
+
+            Object.values(usuario).forEach(function(valor) {
+                const celda = document.createElement("td");
+                celda.textContent = valor;
+                fila.appendChild(celda);
+            });
+
+            tbody.appendChild(fila);
+        });
+
+        tabla.appendChild(thead);
+        tabla.appendChild(tbody);
+
+        contenedor.appendChild(tabla);
+    </script>
+
+</body>
+</html>

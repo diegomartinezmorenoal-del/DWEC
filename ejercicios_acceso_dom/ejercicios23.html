@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 23</title>
+
+    <style>
+        .panel {
+            display: none;
+            padding: 10px;
+            background-color: lightgray;
+        }
+
+        .panel.activo {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <button class="acordeon">HTML</button>
+    <div class="panel">
+        HTML sirve para crear la estructura de una página web.
+    </div>
+
+    <button class="acordeon">CSS</button>
+    <div class="panel">
+        CSS sirve para dar estilo a una página web.
+    </div>
+
+    <button class="acordeon">JavaScript</button>
+    <div class="panel">
+        JavaScript sirve para añadir interactividad.
+    </div>
+
+    <script>
+        const botones = document.querySelectorAll(".acordeon");
+
+        botones.forEach(function(boton) {
+
+            boton.addEventListener("click", function() {
+
+                const panel = boton.nextElementSibling;
+
+                botones.forEach(function(otroBoton) {
+                    const otroPanel = otroBoton.nextElementSibling;
+                    otroPanel.classList.remove("activo");
+                });
+
+                panel.classList.add("activo");
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

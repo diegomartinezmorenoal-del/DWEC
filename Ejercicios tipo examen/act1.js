@@ -41,7 +41,7 @@ class Pelicula {
         return this._genero;
     }
 }
-
+ejercicios_acceso_dom
 
 // Creamos un objeto de prueba
 const pelicula1 = new Pelicula("Saw", "Terror");

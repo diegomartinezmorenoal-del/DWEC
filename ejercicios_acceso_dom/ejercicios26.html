@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 26</title>
+</head>
+<body>
+
+    <h1>Ordenar usuarios</h1>
+
+    <table border="1" cellpadding="10">
+
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+
+        <tbody id="tabla-usuarios">
+
+            <tr>
+                <td>Juan</td>
+                <td><button class="subir">Subir</button></td>
+            </tr>
+
+            <tr>
+                <td>Ana</td>
+                <td><button class="subir">Subir</button></td>
+            </tr>
+
+            <tr>
+                <td>Pedro</td>
+                <td><button class="subir">Subir</button></td>
+            </tr>
+
+            <tr>
+                <td>Laura</td>
+                <td><button class="subir">Subir</button></td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    <script>
+        const filas = document.querySelectorAll("#tabla-usuarios tr");
+
+        filas.forEach(function(fila) {
+
+            const boton = fila.querySelector(".subir");
+
+            boton.addEventListener("click", function() {
+
+                const filaAnterior = fila.previousElementSibling;
+
+                if (filaAnterior) {
+                    fila.parentNode.insertBefore(fila, filaAnterior);
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

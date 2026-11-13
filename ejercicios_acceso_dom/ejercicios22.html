@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 22</title>
+</head>
+<body>
+
+    <h1>Buscador de productos</h1>
+
+    <input type="text" id="buscador" placeholder="Buscar producto...">
+
+    <ul>
+        <li class="producto">Ordenador</li>
+        <li class="producto">Ratón</li>
+        <li class="producto">Teclado</li>
+        <li class="producto">Monitor</li>
+        <li class="producto">Impresora</li>
+        <li class="producto">Auriculares</li>
+    </ul>
+
+    <script>
+        const buscador = document.getElementById("buscador");
+        const productos = document.querySelectorAll(".producto");
+
+        buscador.addEventListener("input", function() {
+
+            const texto = buscador.value.toLowerCase();
+
+            productos.forEach(function(producto) {
+
+                const nombre = producto.textContent.toLowerCase();
+
+                if (nombre.includes(texto)) {
+                    producto.style.display = "list-item";
+                } else {
+                    producto.style.display = "none";
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

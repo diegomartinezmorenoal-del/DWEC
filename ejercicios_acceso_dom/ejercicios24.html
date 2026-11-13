@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 24</title>
+
+    <style>
+        img {
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .activa {
+            border: 3px solid blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Galería de imágenes</h1>
+
+    <img id="imagen-principal"
+         src="https://picsum.photos/id/10/400/250"
+         width="400"
+         height="250">
+
+    <h2>Miniaturas</h2>
+
+    <img class="miniatura"
+         src="https://picsum.photos/id/10/100/70"
+         data-full="https://picsum.photos/id/10/400/250"
+         width="100">
+
+    <img class="miniatura"
+         src="https://picsum.photos/id/20/100/70"
+         data-full="https://picsum.photos/id/20/400/250"
+         width="100">
+
+    <img class="miniatura"
+         src="https://picsum.photos/id/30/100/70"
+         data-full="https://picsum.photos/id/30/400/250"
+         width="100">
+
+    <img class="miniatura"
+         src="https://picsum.photos/id/40/100/70"
+         data-full="https://picsum.photos/id/40/400/250"
+         width="100">
+
+    <script>
+        const imagenPrincipal = document.getElementById("imagen-principal");
+
+        const miniaturas = document.querySelectorAll(".miniatura");
+
+        miniaturas.forEach(function(imagen) {
+
+            imagen.addEventListener("click", function() {
+
+                imagenPrincipal.src = imagen.dataset.full;
+
+                miniaturas.forEach(function(miniatura) {
+                    miniatura.classList.remove("activa");
+                });
+
+                imagen.classList.add("activa");
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

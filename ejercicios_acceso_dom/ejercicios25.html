@@ -1,0 +1,83 @@
+2
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 25</title>
+
+    <style>
+        .tarjeta-item {
+            padding: 10px;
+            margin: 5px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lista de tarjetas</h1>
+
+    <div id="contenedor">
+
+        <div class="tarjeta-item">Tarjeta 1</div>
+        <div class="tarjeta-item">Tarjeta 2</div>
+        <div class="tarjeta-item">Tarjeta 3</div>
+        <div class="tarjeta-item">Tarjeta 4</div>
+        <div class="tarjeta-item">Tarjeta 5</div>
+        <div class="tarjeta-item">Tarjeta 6</div>
+        <div class="tarjeta-item">Tarjeta 7</div>
+        <div class="tarjeta-item">Tarjeta 8</div>
+        <div class="tarjeta-item">Tarjeta 9</div>
+        <div class="tarjeta-item">Tarjeta 10</div>
+        <div class="tarjeta-item">Tarjeta 11</div>
+        <div class="tarjeta-item">Tarjeta 12</div>
+        <div class="tarjeta-item">Tarjeta 13</div>
+        <div class="tarjeta-item">Tarjeta 14</div>
+        <div class="tarjeta-item">Tarjeta 15</div>
+        <div class="tarjeta-item">Tarjeta 16</div>
+        <div class="tarjeta-item">Tarjeta 17</div>
+        <div class="tarjeta-item">Tarjeta 18</div>
+        <div class="tarjeta-item">Tarjeta 19</div>
+        <div class="tarjeta-item">Tarjeta 20</div>
+        <div class="tarjeta-item">Tarjeta 21</div>
+        <div class="tarjeta-item">Tarjeta 22</div>
+        <div class="tarjeta-item">Tarjeta 23</div>
+        <div class="tarjeta-item">Tarjeta 24</div>
+        <div class="tarjeta-item">Tarjeta 25</div>
+
+    </div>
+
+    <button onclick="mostrarPagina(1)">Página 1</button>
+    <button onclick="mostrarPagina(2)">Página 2</button>
+    <button onclick="mostrarPagina(3)">Página 3</button>
+    <button onclick="mostrarPagina(4)">Página 4</button>
+    <button onclick="mostrarPagina(5)">Página 5</button>
+
+    <script>
+        const tarjetas = document.querySelectorAll(".tarjeta-item");
+
+        function mostrarPagina(numPagina) {
+
+            const elementosPorPagina = 5;
+
+            const inicio = (numPagina - 1) * elementosPorPagina;
+
+            const fin = inicio + elementosPorPagina;
+
+            tarjetas.forEach(function(tarjeta, indice) {
+
+                if (indice >= inicio && indice < fin) {
+                    tarjeta.style.display = "block";
+                } else {
+                    tarjeta.style.display = "none";
+                }
+
+            });
+
+        }
+
+        mostrarPagina(1);
+    </script>
+
+</body>
+</html>
