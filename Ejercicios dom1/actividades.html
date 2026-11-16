@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicios DOM</title>
+  <style>
+    .resaltado { background-color: yellow; padding: 10px; }
+    section { border-bottom: 1px solid #ccc; padding: 10px 0; }
+    h3 { color: #444; font-size: 14px; margin: 0 0 8px; }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Crea un elemento (por ejemplo, un <h1 id="title">) y cambia su contenido a "¡Hola Mundo!" al cargar la página -->
+  <section>
+    <h3>Ejercicio 1: Cambiar el contenido de un h1 al cargar la página</h3>
+    <h1 id="title"></h1>
+  </section>
+
+  <!-- 2. Inserta una imagen con id="myImage" y cambia su atributo src a otra URL -->
+  <section>
+    <h3>Ejercicio 2: Cambiar el atributo src de una imagen</h3>
+    <img id="myImage" src="https://via.placeholder.com/150/0000FF" alt="Imagen inicial">
+  </section>
+
+  <!-- 3. Crea un <div id="box"> sin clases y agrega la clase resaltado cuando se cargue la página -->
+  <section>
+    <h3>Ejercicio 3: Añadir la clase "resaltado" a un div</h3>
+    <div id="box">Caja sin clases</div>
+  </section>
+
+  <!-- 4. Crea un párrafo con id="paragraph" y cambia su color de texto a azul -->
+  <section>
+    <h3>Ejercicio 4: Cambiar el color de texto de un párrafo a azul</h3>
+    <p id="paragraph">Este párrafo se volverá azul.</p>
+  </section>
+
+  <!-- 5. Agrega un botón que, al hacer clic, cree un nuevo elemento <li> con el texto "Nuevo elemento" y lo agregue a una lista <ul id="list"> -->
+  <section>
+    <h3>Ejercicio 5: Crear un nuevo &lt;li&gt; y añadirlo a una lista</h3>
+    <button id="addItemBtn">Añadir elemento</button>
+    <ul id="list"></ul>
+  </section>
+
+  <!-- 6. Crea un párrafo con id="deleteParagraph" y un botón. Al hacer clic en el botón, elimina el párrafo del DOM -->
+  <section>
+    <h3>Ejercicio 6: Eliminar un párrafo del DOM</h3>
+    <p id="deleteParagraph">Soy un párrafo que será eliminado.</p>
+    <button id="deleteBtn">Eliminar párrafo</button>
+  </section>
+
+  <!-- 7. Crea un <div id="content"> con algún texto y reemplaza su contenido por un <h2> con el mensaje "Nuevo Contenido" -->
+  <section>
+    <h3>Ejercicio 7: Reemplazar el contenido de un div por un h2</h3>
+    <div id="content">Contenido original</div>
+  </section>
+
+  <!-- 8. Crea un botón con id="greetBtn" y añade un evento que muestre una alerta con el mensaje "¡Hola!" al hacer clic -->
+  <section>
+    <h3>Ejercicio 8: Mostrar una alerta al hacer clic en un botón</h3>
+    <button id="greetBtn">Saludar</button>
+  </section>
+
+  <!-- 9. Crea un <input id="textInput"> y un <div id="result">. Al escribir en el input, el <div> debe actualizarse mostrando lo que se escribe -->
+  <section>
+    <h3>Ejercicio 9: Mostrar en un div lo que se escribe en un input</h3>
+    <input id="textInput" type="text" placeholder="Escribe algo...">
+    <div id="result"></div>
+  </section>
+
+  <!-- 10. Crea un botón con id="backgroundBtn" y, al hacer clic, cambia el color de fondo del <body> a un color diferente -->
+  <section>
+    <h3>Ejercicio 10: Cambiar el color de fondo del body</h3>
+    <button id="backgroundBtn">Cambiar fondo</button>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // 1. Cambiar el contenido del h1 al cargar la página
+      const title = document.querySelector('#title');
+      title.textContent = '¡Hola Mundo!';
+
+      // 2. Cambiar el atributo src de la imagen
+      const myImage = document.querySelector('#myImage');
+      myImage.setAttribute('src', 'https://via.placeholder.com/150/FF0000');
+      myImage.setAttribute('alt', 'Imagen modificada');
+
+      // 3. Añadir la clase "resaltado" al div
+      const box = document.querySelector('#box');
+      box.classList.add('resaltado');
+
+      // 4. Cambiar el color del texto del párrafo a azul
+      const paragraph = document.querySelector('#paragraph');
+      paragraph.style.color = 'blue';
+
+      // 5. Botón que crea un <li> y lo añade a la lista
+      const addItemBtn = document.querySelector('#addItemBtn');
+      const list = document.querySelector('#list');
+      addItemBtn.addEventListener('click', () => {
+        const li = document.createElement('li');
+        li.textContent = 'Nuevo elemento';
+        list.appendChild(li);
+      });
+
+      // 6. Botón que elimina el párrafo del DOM
+      const deleteBtn = document.querySelector('#deleteBtn');
+      deleteBtn.addEventListener('click', () => {
+        const deleteParagraph = document.querySelector('#deleteParagraph');
+        if (deleteParagraph) deleteParagraph.remove();
+      });
+
+      // 7. Reemplazar el contenido del div por un <h2>
+      const content = document.querySelector('#content');
+      content.innerHTML = '<h2>Nuevo Contenido</h2>';
+
+      // 8. Botón que muestra una alerta
+      const greetBtn = document.querySelector('#greetBtn');
+      greetBtn.addEventListener('click', () => {
+        alert('¡Hola!');
+      });
+
+      // 9. Mostrar en el div lo que se escribe en el input
+      const textInput = document.querySelector('#textInput');
+      const result = document.querySelector('#result');
+      textInput.addEventListener('input', () => {
+        result.textContent = textInput.value;
+      });
+
+      // 10. Cambiar el color de fondo del body al hacer clic
+      const backgroundBtn = document.querySelector('#backgroundBtn');
+      backgroundBtn.addEventListener('click', () => {
+        const colores = ['#fde68a', '#bfdbfe', '#bbf7d0', '#fbcfe8', '#e9d5ff'];
+        const aleatorio = colores[Math.floor(Math.random() * colores.length)];
+        document.body.style.backgroundColor = aleatorio;
+      });
+
+    });
+  </script>
+</body>
+</html>
